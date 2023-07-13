@@ -3,7 +3,7 @@ import { getCookie } from 'cookies-next';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-export default function SignupPage( {username} ) {
+export default function SignupPage( {username, uniqueid} ) {
     const router = useRouter()
     const { msg } = router.query
     return (

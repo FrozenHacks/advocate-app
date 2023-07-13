@@ -3,7 +3,7 @@ import { getCookie } from 'cookies-next';
 import Link from 'next/link'
 import clientPromise from "../lib/mongodb";
 
-export default function ProfilePage( {username, created} ) {
+export default function ProfilePage( {username, created, uniqueid} ) {
     return (
         <Layout pageTitle="Profile">
             <Link href="/">Home</Link><br/>
