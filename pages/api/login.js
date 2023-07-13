@@ -14,10 +14,12 @@ export default async function handler(req, res) {
         return;
     }
     const user = users[0]
+    const uniqueid = user.ID
     const guess_hash = createHash('sha256').update(guess).digest('hex');
     if (guess_hash == user.Password){
         const cookies = new Cookies(req, res)
         cookies.set('username', username)
+        cookies.set('uniqueid', uniqueid)
         res.redirect("/")
     } else {
         res.redirect("/login?msg=Incorrect username or password")

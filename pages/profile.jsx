@@ -17,6 +17,7 @@ export async function getServerSideProps(context) {
     const req = context.req
     const res = context.res
     var username = getCookie('username', { req, res });
+    var uniqueid = getCookie('uniqueid', { req, res }); // Get the uniqueid from cookies
     if (username == undefined){
         return {
             redirect: {
@@ -31,6 +32,6 @@ export async function getServerSideProps(context) {
     const userdoc = users[0]
     const created = userdoc['Created']
     return {
-      props: {username: username, created: created},
+      props: {username: username, created: created, uniqueid: uniqueid },
     }
 }
