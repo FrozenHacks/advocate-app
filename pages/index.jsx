@@ -15,8 +15,7 @@ export default function HomePage({ username, uniqueid }) {
             <ul>
               {username ? (
                 <>
-                <h2>Hi {username}</h2>
-          <p>voting ID: {uniqueid}</p> {/* Add the uniqueid as a paragraph */}
+             
                   <li>
                     <Link href="/profile">Profile</Link>
                   </li>

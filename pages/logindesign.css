@@ -55,13 +55,18 @@ header {
     margin-right: 10px;
   }
   
+  .text-input {
+    color: black;
+  }
+  
   .container {
     width: 300px;
-    margin: 0 auto;
+    margin: 100px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
     color: #000000;
+
   }
   
   .container a {
@@ -79,11 +84,12 @@ header {
   
   .login-form input {
     display: block;
-    width: 100%;
+    width: 290px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    color: #000000;
   }
   
   .login-form input[type="submit"] {

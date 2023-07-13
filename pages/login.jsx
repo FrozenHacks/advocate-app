@@ -6,6 +6,11 @@ import { useRouter } from 'next/router'
 export default function LoginPage({ username, uniqueid }) {
   const router = useRouter()
   const { msg } = router.query
+
+  const handleBack = () => {
+    router.push('/');
+  };
+
   return (
     <Layout pageTitle="Login">
       <div className="container">
@@ -26,6 +31,7 @@ export default function LoginPage({ username, uniqueid }) {
               type="text"
               placeholder="Username"
               required
+              className="text-input"
             />
             <br />
             <input
@@ -35,10 +41,11 @@ export default function LoginPage({ username, uniqueid }) {
               type="password"
               placeholder="Password"
               required
+              className="text-input"
             />
             <br />
             <input type="submit" value="Login" />
-            <button onCl></button>
+            <input type="button" value="Back"  onClick={handleBack}/>
           </form>
         </div>
       </div>
