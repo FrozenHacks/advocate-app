@@ -2,7 +2,8 @@ import Layout from '../components/layout'
 import { getCookie } from 'cookies-next';
 import Link from 'next/link'
 
-export default function HomePage({ username }) {
+
+export default function HomePage({ username, uniqueid }) {
   return (
     <Layout pageTitle="Home">
       <header>
@@ -14,6 +15,8 @@ export default function HomePage({ username }) {
             <ul>
               {username ? (
                 <>
+                <h2>Hi {username}</h2>
+          <p>voting ID: {uniqueid}</p> {/* Add the uniqueid as a paragraph */}
                   <li>
                     <Link href="/profile">Profile</Link>
                   </li>
@@ -70,12 +73,15 @@ export default function HomePage({ username }) {
   );
 }
 
+
 export async function getServerSideProps(context) {
-  const req = context.req
-  const res = context.res
+  const req = context.req;
+  const res = context.res;
   var username = getCookie('username', { req, res });
-  if (username == undefined) {
+  var uniqueid = getCookie('uniqueid', { req, res }); // Get the uniqueid from cookies
+  if (username === undefined) {
     username = false;
+    uniqueid = false;
   }
-  return { props: { username } };
+  return { props: { username, uniqueid } }; // Pass the uniqueid as a prop
 }
